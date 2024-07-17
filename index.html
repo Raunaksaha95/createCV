@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css"/>
+
+    <title>Create CV</title>
+</head>
+<body>
+
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-3">Resume Generator</h1>
+
+        <div class="row">
+
+    <!---------------First coloum all-------------------->
+            <div class="col-md-6">
+                <!--first coloum-->
+                <h3 class="mt-2">Parsonal Information</h3>
+                <div class="form-group">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" id="nameField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="contactField">Your Contact Number</label>
+                    <input type="text" id="contactField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="emailField">Your Email Id</label>
+                    <input type="text" id="emailField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="addressField">Your Address</label>
+                    <textarea 
+                    id="addressField" 
+                    placeholder="Enter here"
+                    class="form-control"
+                    rows="5"
+                    ></textarea>
+                </div>
+
+<!------------------image link------------------->
+
+                <div class="form-group mt-2">
+
+                    <label for="">Select your Profile Photo</label>
+                    <input id="imgField" type="file" class="form-control"/>
+                </div>
+
+               <p class="text-secondary mt-2">Inportant link</p>
+               <!--------------LINKS------------->
+               <div class="form-group">
+                <label for="fbField">Naukri</label>
+                <input type="text" id="fbField" placeholder="Enter here" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="LinkedInField">LinkedIn</label>
+                <input type="text" id="LinkedInField" placeholder="Enter here" class="form-control">
+            </div>
+            </div>
+
+    <!---------------Second coloum all-------------------->
+            <div class="col-md-6">
+                <!--second coloum-->
+                <h3 class="my-3">Professional Information</h3>
+
+
+                <div class="form-group mt-2">
+                    <label for="obField">Objective</label>
+                    <textarea 
+                    id="obField"
+                    placeholder="Enter here"
+                    class="form-control obField"
+                    rows="5"
+                    ></textarea>
+                </div>
+                <div class="form-group mt-2" id="we">
+                    <label for="weField">Work Experience</label>
+                    <textarea  
+                    placeholder="Enter here"
+                    class="form-control weField"
+                    rows="3"
+                    ></textarea>
+
+                    <!----------1st new text area----------->
+
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+                <div class="form-group mt-2" id="aq">
+                    <label for="aqField">Academic Qualification</label>
+                    <textarea 
+                    placeholder="Enter here"
+                    class="form-control aqField"
+                    rows="3"
+                    ></textarea>
+
+                    <!----------2nd new text area----------->
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button onclick="addNewAQField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="containter text-center mt-3">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+
+    <!-------------------------cv template------------------------------->
+
+
+
+    <div class="container" id="cv-template">
+
+        <div class="row">
+            <div class="col-md-4 text-center py-4 background">
+              <!---first coloum-----> 
+              
+              <img id="imgT" src="https://amaxfireandsecurity.co.uk/wp-content/uploads/2023/12/profile-pic-MD.jpg" 
+              alt="" class="img-fluid myImg"/>
+
+              <div class="container">
+                <p id="nameT1">dsfvdsv Saha</p>
+                <p id="contactT">916354684651, 15646846</p>
+                <p id="emailT">dgvhbsdkbvs@gjfn.com</p>
+                <p id="addressT">34,sgvd rd fgvjn, west bengal</p>
+
+                <hr />
+
+                <p><a id="fbT" href="#1">https://www.naukri.com/</a></p>
+                <p><a  id="linkdT" href="#1">https://www.linkedin.com/in/</a></p>
+
+
+              </div>
+              
+            </div>
+            <div class="col-md-8 py-5">
+                <!--second coloum-->
+
+                <h1 id="nameT2" class="text-center" style="font-weight: 520">RAUNAK SAHA</h1>
+
+                <!----objective card------>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="ObjectiveT">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, earum eos, consequatur provident atque, sit molestias amet dolorem cupiditate accusantium maiores ex explicabo. Reiciendis provident eius error aut placeat sunt sint velit esse corporis nobis. Officiis ducimus nobis eaque veniam? Vel in quod quas deserunt, a accusantium nobis nostrum placeat.
+                        </p>
+                    </div>
+                </div>
+
+                <!----Work Experience card------>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                       
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, quo.</li>
+                        
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, quo.</li>
+                        
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, quo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!----Education Qualification card------>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Education Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                       
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, quo.</li>
+                        
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, quo.</li>
+                        
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, quo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container mt-4 text-center">
+                    <button onclick="printCv()" class="btn background">
+                        Print CV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

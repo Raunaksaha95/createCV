@@ -1,0 +1,18 @@
+/* #cv-form{
+    display: none;
+} */
+
+.myImg{
+    /*border: 1px solid rebeccapurple;*/
+    border-radius: 50%;
+    width: 200px;
+}
+
+#cv-template{
+    display: none;
+}
+
+.background{
+    background-color: rgb(209, 186, 111);
+
+}
